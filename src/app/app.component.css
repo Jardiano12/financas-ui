@@ -9,6 +9,10 @@
   width: 120px;
 }
 
+.col-acoes-header {
+  width: 105px;
+}
+
 .col-data-content {
   text-align: center;
 }
