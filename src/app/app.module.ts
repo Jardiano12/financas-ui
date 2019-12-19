@@ -16,6 +16,7 @@ import {CalendarModule} from 'primeng/calendar';
 import  { InputTextareaModule } from  'primeng/inputtextarea';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {DropdownModule} from 'primeng/dropdown';
+import {CurrencyMaskModule} from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {DropdownModule} from 'primeng/dropdown';
     InputTextareaModule,
     CalendarModule,
     SelectButtonModule,
-    DropdownModule
+    DropdownModule,
+    CurrencyMaskModule
   ],
   providers: [
 
