@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light" style="background-color: #1e94d2;">
+  <div class="container">
+    <div class="ui-g">
+      <div class="container">
+        <div>
+          <a href="javascript::" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu">
+            <i class="pi pi-bars"> </i>
+          </a>
+          <a class="navbar-brand" href="#" style="color: #ffffff;" >Finanças -- projeto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="navbar-menu" [hidden]="!exibindoMenu">
+    <li class="navbar-usuario">José da Silva</li>
+    <li class="navbar-menuitem"><a href="#">Lançamentos</a></li>
+    <li class="navbar-menuitem"><a href="#">Pessoas</a></li>
+    <li class="navbar-menuitem"><a href="#">Logout</a></li>
+  </ul>
+
+</nav>
