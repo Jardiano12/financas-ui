@@ -41,13 +41,20 @@
           <tr>
             <td>{{lancamento.pessoa}}</td>
             <td>{{lancamento.descricao}}</td>
-            <td class="col-data-content">{{lancamento.dataVencimento}}</td>
-            <td class="col-data-content">{{lancamento.dataPagamento}}</td>
+            <td class="col-data-content">
+              <span>{{ lancamento.dataVencimento | date:'dd/MM/yyyy' }}</span>
+            </td>
+            <td class="col-data-content">
+              <span>{{ lancamento.dataPagamento | date:'dd/MM/yyyy' }}</span>
+            </td>
             <!--
                         <td class="col-valor-content">{{lancamento.valor}}</td>
             -->
             <td class="col-valor-content">
+<!--
               <span [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{lancamento.valor}} </span>
+-->
+              <span [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lancamento.valor | number:'1.2-2' }}</span>
             </td>
             <td class="col-acoes">
               <a pButton class="espaco-icones" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" style="color: white"></a>
@@ -66,5 +73,74 @@
 
 
 </div>
+
+
+<!--
+
+<div class="container">
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Descrição</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-12">
+      <label style="display: block">Vencimento</label>
+      <input pInputText type="text" style="width: 95px">
+
+      <label>até</label>
+      <input pInputText type="text" style="width: 95px">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-dataTable [value]="lancamentos" [paginator]="true" [rows]="5"
+          [responsive]="true">
+        <p-column field="pessoa" header="Pessoa"></p-column>
+        <p-column field="descricao" header="Descrição"></p-column>
+        <p-column header="Vencimento" styleClass="col-data">
+            <ng-template let-lanc="rowData" pTemplate="body">
+                <span>{{ lanc.dataVencimento | date:'dd/MM/yyyy' }}</span>
+            </ng-template>
+        </p-column>
+        <p-column header="Pagamento" styleClass="col-data">
+            <ng-template let-lanc="rowData" pTemplate="body">
+                <span>{{ lanc.dataPagamento | date:'dd/MM/yyyy' }}</span>
+            </ng-template>
+        </p-column>
+        <p-column field="valor" header="Valor" styleClass="col-valor">
+          <ng-template let-lanc="rowData" pTemplate="body">
+            <span [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lanc.valor | number:'1.2-2' }}</span>
+          </ng-template>
+        </p-column>
+        <p-column styleClass="col-acoes">
+            <ng-template pTemplate="body">
+              <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+              <button pButton icon="fa-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+            </ng-template>
+        </p-column>
+      </p-dataTable>
+
+    </div>
+
+    <div class="ui-g-12">
+      <a pButton label="Novo Lançamento"></a>
+    </div>
+
+  </div>
+
+</div>
+-->
 
 
