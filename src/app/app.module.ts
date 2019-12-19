@@ -14,6 +14,8 @@ import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.co
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import {CalendarModule} from 'primeng/calendar';
 import  { InputTextareaModule } from  'primeng/inputtextarea';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import  { InputTextareaModule } from  'primeng/inputtextarea';
     TableModule,
     TooltipModule,
     InputTextareaModule,
-    CalendarModule
+    CalendarModule,
+    SelectButtonModule,
+    DropdownModule
   ],
   providers: [
 
